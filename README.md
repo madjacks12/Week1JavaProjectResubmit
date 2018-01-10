@@ -1,8 +1,8 @@
 # _Event Planner_
 
-#### _Java app that calculates costs of , {Date of current version}_
+#### _Java app that calculates costs of , January 9th, 2018_
 
-#### By _**{List of contributors}**_
+#### By _**Matt Jackson**_
 
 ## Description
 
@@ -16,9 +16,7 @@ _This app takes user input for creating an event and calculates the cost of an e
 
 ## Known Bugs
 
-*_Cost of user selections will not add up._
-*_The app cannot currently take coupon code_
-*_There needs to be a loop implemented on the UI questionaire_
+*_All known bugs have been fixed_
 
 
 ## Technologies Used
