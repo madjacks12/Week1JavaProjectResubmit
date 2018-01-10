@@ -10,8 +10,6 @@ public class Event {
     private String bevPrice;
     private String entPrice;
     private int totalPrice;
-    private int coupon1;
-    private int coupon2;
 
 
     public Event(int guests, String food, String bev, String ent) {
@@ -107,19 +105,20 @@ public class Event {
     public int getEntPrice() {
         return Integer.parseInt(this.entPrice);
     }
-    public int getTotalPrice() {
-        return this.guestPrice+Integer.parseInt(this.foodPrice)+Integer.parseInt(this.bevPrice)+Integer.parseInt(this.entPrice);
+    public int TotalPrice() {
+        totalPrice = this.guestPrice+Integer.parseInt(this.foodPrice)+Integer.parseInt(this.bevPrice)+Integer.parseInt(this.entPrice);
+        return totalPrice;
     }
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public int getCoupon1(int totalPrice) {
+    public int Coupon1() {
         return (totalPrice - 100);
     }
 
-    public int getCoupon2(int totalPrice) {
+    public int Coupon2() {
         return (totalPrice - 300);
     }
 }

@@ -61,13 +61,18 @@ public class EventTest {
 
         assertEquals("1000", testEvent.entPriceCalc());
     }
+    @Test
+    public void runEvent_GetsCoupon1_minus100() {
+        Event testEvent = new Event(2, "chicken", "soda", "live band");
 
-//    @Test
-//    public void runEvent_TotalCost_2000() {
-//        Event testEvent = new Event(2, "chicken", "soda", "live band", 100, "10", "50", "0");
-//
-//        assertEquals("2000", testEvent.totalCost());
-//
-//
-//    }
+        assertEquals(-100, testEvent.Coupon1());
+    }
+    @Test
+    public void runEvent_GetsCoupon2_minus300() {
+        Event testEvent = new Event(2, "chicken", "soda", "live band");
+
+        assertEquals(-300, testEvent.Coupon2());
+    }
+
 }
+

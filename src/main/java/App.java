@@ -50,9 +50,9 @@ public class App {
                 newEvent.getBevPrice();
                 newEvent.getEntPrice();
 
-                int totalPrice = newEvent.getTotalPrice();
-                int coupon1 = newEvent.getCoupon1(totalPrice);
-                int coupon2 = newEvent.getCoupon2(totalPrice);
+                int totalPrice = newEvent.TotalPrice();
+                int coupon1 = newEvent.Coupon1();
+                int coupon2 = newEvent.Coupon2();
                 System.out.print("Thank you, your estimate is $" + totalPrice);
                 System.out.println("----------------------");
                 if (totalPrice > 500 && totalPrice < 1000) {
