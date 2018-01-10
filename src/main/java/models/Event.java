@@ -9,6 +9,9 @@ public class Event {
     private String foodPrice;
     private String bevPrice;
     private String entPrice;
+    private int totalPrice;
+    private int coupon1;
+    private int coupon2;
 
 
     public Event(int guests, String food, String bev, String ent) {
@@ -19,14 +22,14 @@ public class Event {
     }
 
 
-    public int guestPriceCalc(int userGuests) {
+    public int guestPriceCalc() {
         if (15 > this.guests) {
             guestPrice += 100;
         } else if ((this.guests >= 15) && (this.guests <= 50)) {
             guestPrice += 200;
         } else if ((this.guests > 50) && (this.guests <= 100)) {
             guestPrice += 300;
-        } else if ((this.guests > 100) && (this.guests <= 300)) {
+        } else if ((this.guests > 100)) {
             guestPrice += 300;
         } else {
             return 0;
@@ -34,7 +37,7 @@ public class Event {
         return guestPrice;
     }
 
-    public String foodPriceCalc(String userFood) {
+    public String foodPriceCalc() {
         if (this.food.equals("chicken")) {
             foodPrice = "150";
         } else if (this.food.equals("steak")) {
@@ -42,7 +45,7 @@ public class Event {
         } else if (this.food.equals("vegetarian")) {
             foodPrice = "100";
         } else {
-            return "try again";
+            return "200";
         }
 
          return foodPrice;
@@ -50,13 +53,13 @@ public class Event {
 
     public String bevPriceCalc() {
         if (this.bev.equals("soda")) {
-            bevPrice = "50";
-        } else if (this.bev.equals ("beer and wine")) {
-            bevPrice = "200";
-        } else if (this.bev.equals ("open bar")) {
-            bevPrice = "1000";
+            bevPrice ="50";
+        } else if (this.bev.contains("wine and beer")) {
+            bevPrice ="200";
+        } else if (this.bev.contains("open bar")) {
+            bevPrice ="1000";
         } else {
-            return "Please enter 'soda', 'beer and wine' or 'open bar'";
+            return "200";
         }
         return bevPrice;
     }
@@ -65,11 +68,11 @@ public class Event {
         if (this.ent.equals ("none")) {
             entPrice = "0";
         } else if (this.ent.equals ("DJ")) {
-            ent = "500";
+            entPrice = "500";
         } else if (this.ent.equals ("live band")) {
             entPrice = "1000";
         } else {
-            return "Please enter 'live band', 'DJ' or 'none'";
+            return "500";
         }
         return entPrice;
     }
@@ -91,8 +94,32 @@ public class Event {
         return this.ent;
     }
 
-    public String getFoodPrice() {
-        return this.foodPrice;
+    public int getGuestPrice() {
+        return this.guestPrice;
     }
 
+    public int getFoodPrice() {
+        return Integer.parseInt(this.foodPrice);
+    }
+    public int getBevPrice() {
+        return Integer.parseInt(bevPrice);
+    }
+    public int getEntPrice() {
+        return Integer.parseInt(this.entPrice);
+    }
+    public int getTotalPrice() {
+        return this.guestPrice+Integer.parseInt(this.foodPrice)+Integer.parseInt(this.bevPrice)+Integer.parseInt(this.entPrice);
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public int getCoupon1(int totalPrice) {
+        return (totalPrice - 100);
+    }
+
+    public int getCoupon2(int totalPrice) {
+        return (totalPrice - 300);
+    }
 }
