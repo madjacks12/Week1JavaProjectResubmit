@@ -62,13 +62,6 @@ public class EventTest {
         assertEquals("1000", testEvent.entPriceCalc());
     }
 
-    @Test
-    public void runEvent_getsTotalCast_50() {
-        Event testEvent = new Event(2, "chicken", "soda", "live band");
-
-        assertEquals(0, testEvent.getTotalPrice());
-    }
-
 //    @Test
 //    public void runEvent_TotalCost_2000() {
 //        Event testEvent = new Event(2, "chicken", "soda", "live band", 100, "10", "50", "0");
