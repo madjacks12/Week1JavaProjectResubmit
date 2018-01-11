@@ -74,5 +74,15 @@ public class EventTest {
         assertEquals(-300, testEvent.Coupon2());
     }
 
+    @Test
+    public void runEvent_totalPriceCalculatesCost_1300() {
+        Event testEvent = new Event(2, "chicken", "soda", "live band");
+        testEvent.guestPriceCalc();
+        testEvent.foodPriceCalc();
+        testEvent.bevPriceCalc();
+        testEvent.entPriceCalc();
+        assertEquals(1300, testEvent.TotalPrice());
+    }
+
 }
 
